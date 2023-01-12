@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #000;
+  overflow: hidden;
+  transition: 2.5s;
+}
+
+.clock {
+  width: 600px;
+  height: 600px;
+  background-color: rgb(0, 65, 80);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  rotate: 180deg;
+  position: relative;
+  transform: scale(0.5);
+  z-index: 4;
+  margin-top: -50px;
+}
+.clock .sec {
+  position: absolute;
+  width: 20px;
+  height: 90%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+.clock .sec .dot {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(100, 200, 170);
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.clock .sec .date {
+  bottom: 220px;
+  white-space: nowrap;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  margin-top: -20px;
+}
+.clock .sec .date .text {
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: rgb(225, 225, 225);
+  transition: 0.5s;
+}
+.clock .text:nth-child(1) {
+  transform: translate(0px, 10px) rotate(-14deg);
+}
+.clock .text:nth-child(2) {
+  transform: translate(0px, 4px) rotate(-9deg);
+}
+.clock .text:nth-child(3) {
+  transform: translate(0px, 1px) rotate(-2deg);
+}
+.clock .text:nth-child(4) {
+  transform: translate(0px, 1px) rotate(-3deg);
+}
+.clock .text:nth-child(5) {
+  transform: translate(0px, 4px) rotate(9deg);
+}
+.clock .text:nth-child(6) {
+  transform: translate(0px, 10px) rotate(14deg);
+}
+.clock .min {
+  position: absolute;
+  width: 35px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+.clock .min .head {
+  width: 100%;
+  height: 46%;
+}
+.clock .min .tail {
+  width: 100%;
+  height: 54%;
+  background-color: rgb(155, 174, 255);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+.clock .hr {
+  position: absolute;
+  width: 35px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+.clock .hr .head {
+  width: 100%;
+  height: 45%;
+}
+.clock .hr .tail {
+  width: 100%;
+  height: 55%;
+  background-color: rgb(105, 145, 215);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+
+.frame_wrap {
+  height: 660px;
+  width: 660px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  rotate: 13deg;
+  transform: scale(0.5);
+  margin-top: -50px;
+}
+.frame_wrap img {
+  width: 100%;
+  height: 100%;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: "Rubik Bubbles", cursive;
+  padding-bottom: 55px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.copyright span {
+  color: #fff;
+  font-size: 20px;
+}
+
+.heart-switch {
+  --duration: .45s;
+  --stroke: #D1D6EE;
+  --stroke-active: #ec4472;
+  --fill: #fff;
+  --fill-active: #ec638e;
+  --shadow: rgba(0, 9, 61, 0.25);
+  cursor: pointer;
+  position: relative;
+  transform: scale(var(--s, 1)) translateZ(0);
+  transition: transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.heart-switch:active {
+  --s: .95;
+}
+.heart-switch input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  outline: none;
+  border: none;
+  pointer-events: none;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  left: 1px;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(202, 200, 200, 0.6196078431);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.heart-switch input + svg {
+  width: 36px;
+  height: 25px;
+  fill: var(--fill);
+  stroke: var(--stroke);
+  stroke-width: 1px;
+  stroke-linejoin: round;
+  display: block;
+  transition: stroke var(--duration), fill var(--duration);
+}
+.heart-switch input:not(:checked) {
+  -webkit-animation: uncheck var(--duration) linear forwards;
+          animation: uncheck var(--duration) linear forwards;
+}
+.heart-switch input:checked {
+  -webkit-animation: check var(--duration) linear forwards;
+          animation: check var(--duration) linear forwards;
+  background: #fff;
+}
+.heart-switch input:checked + svg {
+  --fill: var(--fill-active);
+  --stroke: var(--stroke-active);
+}
+
+@-webkit-keyframes uncheck {
+  0% {
+    transform: rotate(-30deg) translateX(13.5px) translateY(8px);
+  }
+  50% {
+    transform: rotate(30deg) translateX(9px);
+  }
+  75% {
+    transform: rotate(30deg) translateX(4.5px) scaleX(1.1);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes uncheck {
+  0% {
+    transform: rotate(-30deg) translateX(13.5px) translateY(8px);
+  }
+  50% {
+    transform: rotate(30deg) translateX(9px);
+  }
+  75% {
+    transform: rotate(30deg) translateX(4.5px) scaleX(1.1);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+@-webkit-keyframes check {
+  0% {
+    transform: rotate(30deg);
+  }
+  25% {
+    transform: rotate(30deg) translateX(4.5px) scaleX(1.1);
+  }
+  50% {
+    transform: rotate(30deg) translateX(9px);
+  }
+  100% {
+    transform: rotate(-30deg) translateX(13.5px) translateY(8px);
+  }
+}
+@keyframes check {
+  0% {
+    transform: rotate(30deg);
+  }
+  25% {
+    transform: rotate(30deg) translateX(4.5px) scaleX(1.1);
+  }
+  50% {
+    transform: rotate(30deg) translateX(9px);
+  }
+  100% {
+    transform: rotate(-30deg) translateX(13.5px) translateY(8px);
+  }
+}
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+.fill {
+  transition: 0.5s;
+}/*# sourceMappingURL=clock.css.map */
